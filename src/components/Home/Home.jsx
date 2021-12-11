@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setUser } from "../actions";
+// import { setUser } from "../../actions";
 // import { db, auth, provider } from "../firebase";
-import { LockClosedIcon } from "@heroicons/react/solid";
 import "./home.css";
 
 const Home = () => {
