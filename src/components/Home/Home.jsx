@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 // import { setUser } from "../../actions";
 // import { db, auth, provider } from "../firebase";
 import "./home.css";
+import Card from "./Card";
+import SignUp from "./SignUp";
 
 const Home = () => {
   // SignIn / SignUp Logic
@@ -51,12 +54,20 @@ const Home = () => {
   //     .catch((error) => alert(error.message));
   // };
   return (
-    <div className="home">
+    <div className="home bg-[#0047bc]">
       <div className="center-box">
-        <div className="left"></div>
-        <div className="right">
-          <div className="bg-sky-900 text-4xl p-4">hey</div>
-          <div className="signUp"></div>
+        <div className="left ">
+          <Card />
+          <Card />
+          <Card />
+        </div>
+        <div className="right pt-12 px-8">
+          <div className="">
+            <button className="bg-green-500 py-2 px-4 rounded-3xl text-white shadow-sm outline-none ">
+              Sign Up
+            </button>
+          </div>
+          <SignUp />
         </div>
       </div>
     </div>
