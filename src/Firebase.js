@@ -1,6 +1,8 @@
-import firebase from "firebase";
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc } from "firebase/firestore/lite";
+import auth from "firebase/auth";
 
-const firebaseApp = firebase.initializeApp({
+const firebaseApp = initializeApp({
   apiKey: "AIzaSyDAeyPXmUBMXRXvWKO7e1p_ymADQ-sex9w",
   authDomain: "phonebook-341f9.firebaseapp.com",
   projectId: "phonebook-341f9",
@@ -8,9 +10,10 @@ const firebaseApp = firebase.initializeApp({
   messagingSenderId: "123634440832",
   appId: "1:123634440832:web:9175ae27b13dd66538e465",
 });
+const db = getFirestore(firebaseApp);
 
-const db = firebaseApp.firestore();
-const auth = firebase.auth();
-const storage = firebase.storage();
+const myauth = auth();
 
-export { db, auth, storage };
+const provider = new auth.GoogleAuthProvider();
+
+export { db, myauth, provider };
